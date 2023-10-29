@@ -1,17 +1,16 @@
-import GlobalStyle from "./GlobalStyle"
-import { Purr } from "./components/Logo"
-import { InputEmail } from "./components/InputEmail";
+import GlobalStyle from "./GlobalStyle";
+import { Purr } from "./components/Logo";
+
+import { SearchToggle } from "./components/SearchToggle";
 
 function App() {
-
-
   return (
     <>
-      <GlobalStyle  />
+      <GlobalStyle />
       <Purr />
-<InputEmail />
+      <SearchToggle />
     </>
   );
 }
 
-export default App
+export default App;

@@ -34,8 +34,14 @@ export const InputUi = styled.input`
   border: solid 1px #ccc;
   margin: 5px 0;
   font-size: larger;
-  font-family: "Quattrocento Sans", sans-serif;
+  font-family: "Quattrocento", serif;
   background-color: #fdfdfd;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0px 0px 5px #ca965c;
+
+  }
 `;
 
 export const Submit = styled.input`
@@ -45,7 +51,7 @@ export const Submit = styled.input`
   border-radius: 12px;
   border: solid 1px #f4dfba;
   font-size: larger;
-  font-family: "Quattrocento Sans", sans-serif;
+  font-family: "Quattrocento", serif;
 
   &:hover {
     background: #db974d;
