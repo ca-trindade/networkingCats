@@ -9,11 +9,14 @@ import {
 export const SearchToggle = () => {
   const [toggle, setToggle] = useToggle();
 
+
+
+
   return (
     <>
       <ToggleContainer>
-        <ToggleButton onClick={setToggle}>
-          What type professional are you looking?
+        <ToggleButton onClick={(setToggle)}>
+          Which professional are you looking?
         </ToggleButton>
         {toggle && (
           <ToggleContainerUl>

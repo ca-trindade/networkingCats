@@ -22,7 +22,7 @@ export const fetchDataBreeds = () => {
         console.log(extractedData);
         return extractedData;
       } else {
-        throw new Error("Erro na chamada da API");
+        throw new Error("Error call API");
       }
     })
     .catch(function (error) {

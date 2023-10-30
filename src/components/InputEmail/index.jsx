@@ -11,8 +11,6 @@ const handleSubmit = async (e) => {
     e.preventDefault();
 };
 
-
-
 export const InputEmail = () => {
   return (
     <>

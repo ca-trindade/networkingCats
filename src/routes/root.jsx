@@ -1,6 +1,5 @@
-import GlobalStyle from "../GlobalStyle";
-import { Purr } from "../components/Logo";
 import { fetchDataBreeds } from "../api/axios";
+import { Purr } from "../components/Logo";
 import { SearchToggle } from "../components/SearchToggle";
 
 fetchDataBreeds();
@@ -9,10 +8,8 @@ fetchDataBreeds();
 function Root() {
   return (
     <>
-      <GlobalStyle />
       <Purr />
       <SearchToggle />
-
     </>
   );
 }

@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const InputFullContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 20%;
+  width: 500px;
   height: 350px;
   padding: 0 25px 40px 25px;
 justify-content: center;
