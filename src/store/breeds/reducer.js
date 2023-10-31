@@ -1,17 +1,19 @@
-const initialState = {
-  breedsData: [],
-};
+import { createSlice } from "@reduxjs/toolkit";
+import { fetchDataBreeds } from "../../api/axios";
 
-const breedsReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case "STORE_BREEDS_DATA":
-      return {
-        ...state,
-        breedsData: action.data,
-      };
-    default:
-      return state;
-  }
-};
 
-export default breedsReducer;
+export const breedsSlice = createSlice({
+  name: "storeBreedsData",
+  initialState: {
+    breedsData: {}
+  },
+  reducers: {
+    saveData: (state) => {
+      state.breedsData = fetchDataBreeds();
+    },
+
+  },
+});
+
+export const { saveData } = breedsSlice.actions;
+export default breedsSlice.reducer;

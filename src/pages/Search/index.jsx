@@ -4,6 +4,8 @@ import { SearchToggle } from "../../components/SearchToggle";
 import catLeft from "../../assets/catOnLeft.png";
 
 export const Search = () => {
+
+
   return (
     <>
       <Navbar />

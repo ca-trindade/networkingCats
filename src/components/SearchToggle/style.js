@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
+
 
 export const ToggleContainer = styled.div`
   display: flex;
@@ -34,7 +36,7 @@ export const ToggleContainerUl = styled.ul`
   padding-left: 0;
 `;
 
-export const ToggleLi = styled.li`
+export const ToggleLi = styled(Link)`
   display: flex;
   justify-content: center;
   background-color: #ca965c;
@@ -46,6 +48,7 @@ export const ToggleLi = styled.li`
   font-family: "Quattrocento", serif;
   padding: 10px;
   margin: 3px 0px;
+  text-decoration: none;
 
   &:hover {
     color: #876445;

@@ -1,7 +1,7 @@
 import axios from "axios";
 import { ENDPOINT } from "../utils/url";
 
-//const apiKey = process.env.REACT_APP_API_KEY;
+//const apiKey = import.meta.env.VITE_KEY
 
 export const fetchDataBreeds = () => {
   axios
@@ -9,6 +9,8 @@ export const fetchDataBreeds = () => {
     .then(function (response) {
       if (response.status === 200) {
         const extractedData = response.data.map((breed) => ({
+          temperament: breed.temperament,
+          description: breed.description,
           affection_level: breed.affection_level,
           child_friendly: breed.child_friendly,
           dog_friendly: breed.dog_friendly,
@@ -26,7 +28,7 @@ export const fetchDataBreeds = () => {
       }
     })
     .catch(function (error) {
-      // handle error
+      
       console.log(error);
       throw error;
     });

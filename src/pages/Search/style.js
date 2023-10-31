@@ -9,5 +9,5 @@ export const ContainerSearch = styled.div`
 `;
 export const CatImg = styled.img`
 height: 80vh;
-margin-top: 4%;
+margin-top: 3%;
 `;

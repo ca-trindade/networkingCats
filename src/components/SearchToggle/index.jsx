@@ -1,3 +1,5 @@
+
+
 import { useToggle } from "../../hooks/useToggle";
 import {
   ToggleContainer,
@@ -11,22 +13,21 @@ export const SearchToggle = () => {
 
 
 
-
   return (
     <>
       <ToggleContainer>
-        <ToggleButton onClick={(setToggle)}>
+        <ToggleButton onClick={setToggle}>
           Which professional are you looking?
         </ToggleButton>
         {toggle && (
           <ToggleContainerUl>
-            <ToggleLi>Affection Alchemist</ToggleLi>
-            <ToggleLi>Tiny Tot Mentor</ToggleLi>
-            <ToggleLi>Dog Whisperer Deluxe</ToggleLi>
-            <ToggleLi>Grooming Supreme</ToggleLi>
-            <ToggleLi>Social Butterfly</ToggleLi>
-            <ToggleLi>Vocal Maestro</ToggleLi>
-            <ToggleLi>Hypoallergenic Oasis</ToggleLi>
+            <ToggleLi to={"/Catalog"}>Affection Alchemist</ToggleLi>
+            <ToggleLi to={"/Catalog"}>Tiny Tot Mentor</ToggleLi>
+            <ToggleLi to={"/Catalog"}>Dog Whisperer Deluxe</ToggleLi>
+            <ToggleLi to={"/Catalog"}>Grooming Supreme</ToggleLi>
+            <ToggleLi to={"/Catalog"}>Social Butterfly</ToggleLi>
+            <ToggleLi to={"/Catalog"}>Vocal Maestro</ToggleLi>
+            <ToggleLi to={"/Catalog"}>Hypoallergenic Oasis</ToggleLi>
           </ToggleContainerUl>
         )}
       </ToggleContainer>

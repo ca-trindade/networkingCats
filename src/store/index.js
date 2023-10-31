@@ -1,9 +1,8 @@
-import { createStore, combineReducers } from "redux";
-import { composeWithDevTools } from "redux-devtools-extension";
-import { breedsReducer } from "./breeds";
+import { configureStore } from "@reduxjs/toolkit";
+import storeBreedsDataReducer from "./breeds/reducer"
 
-export const rootReducer = combineReducers({
-  breedsData: breedsReducer,
+export const store = configureStore({
+  reducer: {
+    storeBreedsData: storeBreedsDataReducer,
+  },
 });
-
-export const store = createStore(rootReducer, composeWithDevTools());
