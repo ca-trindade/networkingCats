@@ -1,5 +1,6 @@
 import { fetchTemperamentDescription } from "../../api/axios";
 import { useEffect, useState } from "react";
+import { Loading } from "../../components/Meowdulating"
 import { Navbar } from "../../components/Navbar";
 import {
   ButtonContainer,
@@ -15,6 +16,7 @@ import {
 export const Catalog = () => {
   const [description, setDescription] = useState([]);
   const [temperament, setTemperament] = useState([]);
+  const [loading, setLoading] = useState([]);
 
   useEffect(() => {
     async function getCatalogData() {
@@ -22,6 +24,7 @@ export const Catalog = () => {
         const tempDescrData = await fetchTemperamentDescription();
         setDescription(tempDescrData.description);
         setTemperament(tempDescrData.temperament);
+        setLoading(false)
       } catch (error) {
         console.log(error);
       }
@@ -35,6 +38,9 @@ export const Catalog = () => {
       <ButtonContainer>
         <GoBack to={"/"}>Choose other Expert</GoBack>
       </ButtonContainer>
+
+      {loading ? (<Loading />) : (
+        <>
       <Title>Affection Alchemist</Title>
       <ContainerList>
         <CardContainer>
@@ -62,7 +68,9 @@ export const Catalog = () => {
             </ButtonContainer>
           </div>
         </CardContainer>
-      </ContainerList>
+          </ContainerList>
+          </>
+        )}
     </>
   );
 };

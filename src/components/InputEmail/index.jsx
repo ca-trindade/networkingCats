@@ -1,3 +1,5 @@
+import { useState } from "react";
+import validator from "validator";
 import {
   InputUi,
   InputFullContainer,
@@ -7,23 +9,42 @@ import {
   Form,
 } from "./style";
 
-const handleSubmit = async (e) => {
-    e.preventDefault();
-};
+
 
 export const InputEmail = () => {
+
+  const [email, setEmail] = useState(" ");
+  const [message, setMessage] = useState("");
+  
+  function handleEmail(event) {
+    let new_Email = event.target.value;
+    setEmail(new_Email);
+    if (!validator.isEmail(new_Email)) {
+      setMessage("Please, enter a valid email!");
+    } else {
+      setMessage("");
+    }
+  }
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+};
+
+
   return (
     <>
       <InputFullContainer>
         <Form id="loginForm" name="loginForm" onSubmit={handleSubmit}>
           <InputContainer>
             <InputLabel for="email">Enter your email:</InputLabel>
-
+            <div style={{ color: "red" }}> {message} </div>
             <InputUi
               type="email"
               id="email"
-              pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
+              value={email}
+              pattern="/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i"
               placeholder="example@example.com"
+              onChange={handleEmail}
               required
             />
           </InputContainer>
