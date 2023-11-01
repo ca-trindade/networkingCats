@@ -1,4 +1,3 @@
-import {useSelector} from "react-redux"
 import { Navbar } from "../../components/Navbar";
 import {
   ButtonContainer,
@@ -11,12 +10,8 @@ import {
 } from "./style";
 
 export const Catalog = () => {
-const {BreedsData} = useSelector((state) => state.storeBreedsData)
-
   return (
     <>
-      <p>{BreedsData}</p>
-
       <Navbar />
       <ButtonContainer>
         <GoBack to={"/"}>Choose other Expert</GoBack>
