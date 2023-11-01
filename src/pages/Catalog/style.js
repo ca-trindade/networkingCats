@@ -23,7 +23,7 @@ export const GoBack = styled(Link)`
 export const ButtonContainer = styled.div`
   display: flex;
   justify-content: end;
-  margin: 15px
+  margin: 15px;
 `;
 
 export const Title = styled.h2`
@@ -35,7 +35,13 @@ export const Title = styled.h2`
   margin: 30px 0;
 `;
 
-export const CardContainer = styled.section`
+export const ContainerList = styled.ul`
+  display: flex;
+  justify-content: center;
+  margin: 15px;
+`;
+
+export const CardContainer = styled.li`
   display: flex;
   flex-direction: column;
   justify-content: center;

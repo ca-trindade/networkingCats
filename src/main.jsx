@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import { Search } from "./pages/Search"
 import { LoginPage } from "./pages/Login"
 import { Catalog } from "./pages/Catalog"
+import { Loading } from "./components/Meowdulating";
 import ErrorPage from "./error-page";
 
 
@@ -18,13 +19,16 @@ const router = createBrowserRouter([
   },
   {
     path: "/LoginPage",
-    element: <LoginPage />
+    element: <LoginPage />,
   },
   {
     path: "/Catalog",
-    element: <Catalog />
+    element: <Catalog />,
   },
-
+  {
+    path: "/Loading",
+    element: <Loading />,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

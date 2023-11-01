@@ -4,8 +4,9 @@ import { ENDPOINT } from "../utils/url";
 //const apiKey = import.meta.env.VITE_KEY
 
 export const fetchDataBreeds = () => {
-   axios.get(ENDPOINT.breeds)
-    .then(response => {
+  axios
+    .get(ENDPOINT.breeds)
+    .then((response) => {
       if (response.status === 200) {
         const extractedData = response.data.map((breed) => ({
           temperament: breed.temperament,
@@ -27,30 +28,22 @@ export const fetchDataBreeds = () => {
       }
     })
     .catch(function (error) {
-      
       console.log(error);
       throw error;
     });
 };
 
-
-export const fetchDataTempMain = () => {
-  axios
-    .get(ENDPOINT.breeds)
-    .then((response) => {
-      if (response.status === 200) {
+export const fetchTemperamentDescription = async () => {
+  try {
+    const response = await axios.get(ENDPOINT.breeds);
         const extractedData = response.data.map((breed) => ({
           temperament: breed.temperament,
           description: breed.description,
+
         }));
-        console.log(extractedData);
-        return extractedData;
-      } else {
-        throw new Error("Error call API");
-      }
-    })
-    .catch(function (error) {
-      console.log(error);
-      throw error;
-    });
+    console.log(extractedData);
+    return extractedData;
+  } catch (error) {
+    console.log(error)
+  }
 };
