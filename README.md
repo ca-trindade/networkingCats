@@ -1,8 +1,39 @@
-# React + Vite
+# Prr.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Purr-fecting Networking
 
-Currently, two official plugins are available:
+Prr. NetworkingCats is a web application that allows you to find the purr-fect expert based on the selected characteristics. It uses the [Cats API](https://thecatapi.com/) to provide you with a variety options.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies Used
+
+- **React.js**: A JavaScript library for building user interfaces.
+- **Vite**: A fast build tool and development server.
+- **Yarn**: A package manager for managing project dependencies.
+- **React Router**: For routing and navigation within the application.
+- **Redux**: A predictable state container for managing application state. [in process]
+- **Validator**: Used for email validation using regular expressions.
+- **Axios**: A promise-based HTTP client for making API requests.
+- **Styled Components**: For styling components.
+
+## Getting Started
+
+To get started with Cat Professional Finder, follow these steps:
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/ca-trindade/networkingCats.git
+   ```
+2. **Install Dependencies**:
+   ```bash
+    yarn install
+   ```
+3. **Run the Development Server**:
+   ```bash
+   yarn dev
+   ```
+
+## Features
+Choose cat professionals based on various characteristics.
+Search for specific cat professionals using the provided filters.
+Validate your email address using regular expressions.
+View detailed information about your selected cat professional.
