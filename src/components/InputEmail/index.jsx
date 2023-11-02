@@ -54,7 +54,7 @@ const handleSubmit = async (e) => {
               type="password"
               id="pass"
               name="password"
-              minlength="8"
+              minLength="8"
               placeholder="********"
               required
             />

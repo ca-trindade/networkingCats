@@ -33,17 +33,12 @@ export const fetchDataBreeds = () => {
     });
 };
 
-export const fetchTemperamentDescription = async () => {
-  try {
-    const response = await axios.get(ENDPOINT.breeds);
-        const extractedData = response.data.map((breed) => ({
-          temperament: breed.temperament,
-          description: breed.description,
-
-        }));
-    console.log(extractedData);
-    return extractedData;
-  } catch (error) {
-    console.log(error)
-  }
+export const fetchBreeds = () => {
+  return axios
+    .get(ENDPOINT.breeds)
+    .then((res) => res.data)
+    .catch((error) => {
+      console.log(error);
+      throw error; // Re-throw the error so it can be handled in the component.
+    });
 };

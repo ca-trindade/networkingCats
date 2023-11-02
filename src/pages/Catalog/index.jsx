@@ -1,5 +1,4 @@
-import axios from "axios";
-import { ENDPOINT } from "../../utils/url";
+import { fetchBreeds } from "../../api/axios";
 import { useEffect, useState } from "react";
 import { Loading } from "../../components/Meowdulating";
 import { Navbar } from "../../components/Navbar";
@@ -16,14 +15,13 @@ import {
 
 export const Catalog = () => {
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios
-      .get(ENDPOINT.breeds)
-      .then((res) => {
+    fetchBreeds()
+      .then((data) => {
+        setData(data);
         setLoading(false);
-        setData(res.data);
       })
       .catch((error) => console.log(error));
   }, []);
