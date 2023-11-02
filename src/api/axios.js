@@ -39,6 +39,6 @@ export const fetchBreeds = () => {
     .then((res) => res.data)
     .catch((error) => {
       console.log(error);
-      throw error; // Re-throw the error so it can be handled in the component.
+      throw error;
     });
 };
