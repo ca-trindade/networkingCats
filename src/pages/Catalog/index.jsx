@@ -51,7 +51,7 @@ export const Catalog = () => {
                   <Paragraph>{data.temperament}</Paragraph>
                 </div>
                 <ButtonContainer>
-                  <FullProfile to={"/LoginPage"}>Full Profile</FullProfile>
+                  <FullProfile to={"/FullProfile"}>Full Profile</FullProfile>
                 </ButtonContainer>
               </CardContainer>
             ))}

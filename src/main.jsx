@@ -8,6 +8,7 @@ import { Search } from "./pages/Search"
 import { LoginPage } from "./pages/Login"
 import { Catalog } from "./pages/Catalog"
 import { Loading } from "./components/Meowdulating";
+import { ProfileExpert } from "./pages/ProfileExpert";
 import ErrorPage from "./error-page";
 
 
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
   {
     path: "/Loading",
     element: <Loading />,
+  },
+  {
+    path: "/FullProfile",
+    element: <ProfileExpert />,
   },
 ]);
 
