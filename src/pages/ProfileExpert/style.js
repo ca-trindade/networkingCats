@@ -47,7 +47,6 @@ export const ProgressContainer = styled.li`
 export const ProgressBar = styled.progress`
 width: 400px;
 height: 50px;
-
 `;
 
 export const Buttons = styled(Link)`

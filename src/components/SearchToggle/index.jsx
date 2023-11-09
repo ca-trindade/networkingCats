@@ -1,4 +1,5 @@
 
+import { useSelectedProfession } from "../../hooks/useContext/professionContext";
 import { useToggle } from "../../hooks/useToggle";
 import {
   ToggleContainer,
@@ -7,35 +8,39 @@ import {
   ToggleLi,
 } from "./style";
 
-export const handleClick = (e) => {
-    switch (e.target.id) {
-      case "affectionAlchemist":
-        console.log ("Affection Alchemist");
-        break;
-      case "tinyTotMentor":
-        console.log ("Tiny Tot Mentor");
-        break;
-      case "dogWhispererDeluxe":
-        console.log ("Dog Whisperer Deluxe");
-        break;
-      case "groomingSupreme":
-        console.log ("Grooming Supreme");
-      break;
-      case "socialButterfly":
-        console.log ("Social Butterfly");
-      break;
-      case "vocalMaestro":
-        console.log ("Vocal Maestro");
-      break;
-      case "hypoallergenicOasis":
-        console.log ("Hypoallergenic Oasis");
-      break;
-  }
-  
-};
+
 
 export const SearchToggle = () => {
   const [toggle, setToggle] = useToggle();
+  const { setSelectedProfession } = useSelectedProfession();
+
+  const handleClick = (e) => {
+      const selectedId = e.target.id;
+
+  switch (selectedId) {
+    case "affectionAlchemist":
+      setSelectedProfession("Affection Alchemist");
+      break;
+    case "tinyTotMentor":
+      setSelectedProfession("Tiny Tot Mentor");
+      break;
+    case "dogWhispererDeluxe":
+      setSelectedProfession("Dog Whisperer Deluxe");
+      break;
+    case "groomingSupreme":
+      setSelectedProfession("Grooming Supreme");
+      break;
+    case "socialButterfly":
+      setSelectedProfession("Social Butterfly");
+      break;
+    case "vocalMaestro":
+      setSelectedProfession("Vocal Maestro");
+      break;
+    case "hypoallergenicOasis":
+      setSelectedProfession("Hypoallergenic Oasis");
+      break;
+  }
+};
 
   return (
     <>
@@ -48,49 +53,49 @@ export const SearchToggle = () => {
             <ToggleLi
               to={"/Catalog"}
               id={"affectionAlchemist"}
-              onClick={(e) => handleClick(e)}
+              onClick={handleClick}
             >
               Affection Alchemist
             </ToggleLi>
             <ToggleLi
               to={"/Catalog"}
               id={"tinyTotMentor"}
-              onClick={(e) => handleClick(e)}
+              onClick={handleClick}
             >
               Tiny Tot Mentor
             </ToggleLi>
             <ToggleLi
               to={"/Catalog"}
               id={"dogWhispererDeluxe"}
-              onClick={(e) => handleClick(e)}
+              onClick={handleClick}
             >
               Dog Whisperer Deluxe
             </ToggleLi>
             <ToggleLi
               to={"/Catalog"}
               id={"groomingSupreme"}
-              onClick={(e) => handleClick(e)}
+              onClick={handleClick}
             >
               Grooming Supreme
             </ToggleLi>
             <ToggleLi
               to={"/Catalog"}
               id={"socialButterfly"}
-              onClick={(e) => handleClick(e)}
+              onClick={handleClick}
             >
               Social Butterfly
             </ToggleLi>
             <ToggleLi
               to={"/Catalog"}
               id={"vocalMaestro"}
-              onClick={(e) => handleClick(e)}
+              onClick={handleClick}
             >
               Vocal Maestro
             </ToggleLi>
             <ToggleLi
               to={"/Catalog"}
               id={"hypoallergenicOasis"}
-              onClick={(e) => handleClick(e)}
+              onClick={handleClick}
             >
               Hypoallergenic Oasis
             </ToggleLi>

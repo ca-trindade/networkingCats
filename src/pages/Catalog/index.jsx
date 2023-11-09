@@ -1,5 +1,6 @@
 import { fetchBreeds } from "../../api/axios";
 import { useEffect, useState } from "react";
+import { useSelectedProfession } from "../../hooks/useContext/professionContext"
 import { Loading } from "../../components/Meowdulating";
 import { Navbar } from "../../components/Navbar";
 import {
@@ -13,9 +14,11 @@ import {
   Paragraph,
 } from "./style";
 
+
 export const Catalog = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
+const { selectedProfession, setSelectedProfession } = useSelectedProfession();
 
   useEffect(() => {
     fetchBreeds()
@@ -37,7 +40,7 @@ export const Catalog = () => {
         <Loading />
       ) : (
         <>
-          <Title>Affection Alchemist</Title>
+          <Title>{selectedProfession}</Title>
           <ContainerList>
             {data.map((data) => (
               <CardContainer key={data.id}>

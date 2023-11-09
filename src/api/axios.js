@@ -1,7 +1,6 @@
 import axios from "axios";
 import { ENDPOINT } from "../utils/url";
-
-//const apiKey = import.meta.env.VITE_KEY
+import { header } from "../utils/headers";
 
 export const fetchDataBreeds = () => {
   axios
@@ -42,3 +41,23 @@ export const fetchBreeds = () => {
       throw error;
     });
 };
+
+export const fetchImages = () => {
+  return axios
+    .get(ENDPOINT.imageId, header )
+    .then((res) => res.data)
+    .catch((error) => {
+      console.log(error);
+      throw error;
+    });
+};
+
+export const fetchBreedImage = async () => {
+  try {
+    const response = await axios.get(ENDPOINT.breeds, {
+      headers: { "x-api-key": import.meta.env.VITE_KEY }
+    })
+    console.log(response.data.url)
+  } catch (error) {
+    throw new Error(error.message)
+  }};

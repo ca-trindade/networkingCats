@@ -36,7 +36,7 @@ const handleSubmit = async (e) => {
       <InputFullContainer>
         <Form id="loginForm" name="loginForm" onSubmit={handleSubmit}>
           <InputContainer>
-            <InputLabel for="email">Enter your email:</InputLabel>
+            <InputLabel htmlFor="email">Enter your email:</InputLabel>
             <div style={{ color: "red" }}> {message} </div>
             <InputUi
               type="email"
@@ -49,7 +49,7 @@ const handleSubmit = async (e) => {
             />
           </InputContainer>
           <InputContainer>
-            <InputLabel for="pass">Enter you password:</InputLabel>
+            <InputLabel htmlFor="pass">Enter you password:</InputLabel>
             <InputUi
               type="password"
               id="pass"
